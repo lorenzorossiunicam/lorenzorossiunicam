@@ -1,0 +1,150 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  min-height: 100vh;
+  background: var(--bs-light);
+}
+
+#main-container {
+  min-height: 70vh;
+}
+
+.impressum {
+  background-image: url("/img/impressum.png");
+  background-size: 6%;
+  background-color: #cfcfcf;
+  color: var(--bs-light);
+}
+.bg-tertiary {
+  background: #313131 !important;
+}
+
+.navbar {
+  height: 100px;
+
+}
+
+.navbar-nav {
+  margin-left:auto;
+}
+
+.navbar-toggler {
+  margin-left:30px;
+  color: #f44336;
+border-color: #f44336;
+}
+
+.navbar, .footer {
+  /*border-left: solid 10px var(--bs-primary);*/
+}
+.nav-item-underline{
+  width: 0px;
+  height: 3px;
+  background: var(--bs-primary);
+}
+@media (max-width: 992px) {
+  .nav-item-underline{
+    display: none;
+  }
+}
+.nav-item{
+  font-size: larger;
+}
+
+.nav-link:hover{
+  color: var(--bs-primary) !important;
+}
+.nav-link-selected {
+  color: var(--bs-primary) !important;
+}
+
+
+.footer {
+  max-height: 200px;
+}
+
+
+.data a {
+  color: black;
+}
+
+.data a:hover {
+  color: #F44336;
+}
+
+.nav-item {
+  margin-left: 5px;
+}
+
+
+
+.return-top {
+  display: none;
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+}
+
+.list-group-item:hover {
+	border-color: var(--bs-primary);
+	-webkit-box-shadow: 0 1px 6px rgba(244, 67, 54, 0.5);
+  box-shadow: 0 1px 6px rgba(244, 67, 54, 0.5);
+}
+
+.carousel-placeholder{
+  min-height:200px; 
+}
+.carousel-caption i {
+  position: static ;
+}
+
+.pdfobject-container { height: 40rem; border: 1rem solid rgba(0,0,0,.1); }
+.overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--dark);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin-top: 20%;
+  padding: 15px;
+  background: var(--dark);
+  width: 80%;
+  height: 400px;
+  position: relative;
+
+}
+
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+}
+.popup .close {
+  position: absolute;
+  top: -50px;
+  transition: all 200ms;
+  font-size: xx-large;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--light);
+  opacity: 1;
+}
+.popup .close:hover {
+  color: var(--primary);
+}
+.overlay-pdf{
+  top : 0;
+  z-index: 1050;
+}

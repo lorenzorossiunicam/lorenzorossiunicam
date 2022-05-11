@@ -1,0 +1,76 @@
+<script>
+  $(document).ready(function() {
+    $('#award').carousel({
+      interval: 2500
+    })
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+    $.get("https://dblp.uni-trier.de/pers/xs/r/Rossi_0001:Lorenzo.rss", function(data) {
+    var $XML = $(data);
+    var year = -1;
+    $XML.find("item").each(function() {
+      var $this = $(this),
+        item = {
+          title:       $this.find("title").text(),
+          link:        $this.find("link").text(),
+          description: $this.find("description").text(),
+          pubDate:     $this.find("pubDate").text(),
+          author:      $this.find("author").text()
+        };
+        if(item.pubDate != year){
+          if(year != -1){$('#publist').append('</ul>');}
+          $('#publist').append('<h3 class="text-primary my-3">'+item.pubDate+'</h3>');
+          $('#publist').append('<ul class="list-group list-group-flush">');
+          year = item.pubDate;
+        }
+        var tmp = item.description.substring(39,item.description.length)
+        $('#publist').append('<li class="list-group-item list-group-item-action">'+ item.description+'</li>');
+      });
+    });
+  });
+</script>
+  <div class="row">
+    <div id="publist" class="col col-md-9 px-3">
+      <h3 class="mb-4">Publications</h3>
+    </div>
+    <div class="col col-md-3 px-3">
+      <h3 class="mb-4">References</h3>
+        <div class="text-center mb-3">
+          <a href="https://scholar.google.it/citations?user=jYLmHTwAAAAJ&hl" target="_blank"  data-bs-toggle="tooltip" data-bs-placement="left" title="Google scholar"><i class="ai ai-google-scholar ai-2x"></i></a>
+          <a href="https://dblp.uni-trier.de/pers/hd/r/Rossi_0001:Lorenzo" target="_blank" ><i class="ai ai-dblp ai-2x"></i></a>
+          <a href="https://orcid.org/0000-0002-6872-0616" target="_blank" ><i class="ai ai-orcid ai-2x"></i></a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57196052573" alt="0000-0002-6872-0616" target="_blank" ><i class="ai ai-scopus ai-2x"></i></a>
+          <a href="https://www.researchgate.net/profile/Lorenzo_Rossi15" target="_blank" ><i class="ai ai-researchgate ai-2x"></i></a>
+        </div>
+
+      <h3 class="mb-4">Awards</h3>
+      <div id="award" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-placeholder">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <a href="pdf/demobest.pdf" target="_blank"><i class="fa-li fa fa-trophy text-warning fa-3x"></i><br>BPM 2018 Demo Track and Award</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <a href="pdf/demobest.pdf" target="_blank"><i class="fa-li fa fa-trophy text-warning fa-3x"></i><br>BPM 2018 Demo Track and Award</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-placeholder">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <a href="pdf/demobest.pdf" target="_blank"><i class="fa-li fa fa-trophy text-warning fa-3x"></i><br>BPM 2018 Demo Track and Award</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

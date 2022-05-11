@@ -1,0 +1,92 @@
+<style media="screen">
+  .block {
+    padding : 15px;
+    margin-bottom: 10%;
+    border: 2px solid var(--bs-light);
+    border-radius: 10px;
+    color: var(--bs-dark);
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .block:hover {
+  	border-color: var(--bs-primary);
+  	-webkit-box-shadow: 0 1px 6px rgba(244, 67, 54, 0.5);
+    box-shadow: 0 1px 6px rgba(244, 67, 54, 0.5);
+  }
+</style>
+
+	<script>
+		ScrollReveal()
+	</script>
+<div class="row">
+  <!-- col 1 -->
+  <div class="col-4">
+    <div class="block block-blue anim-3" >
+      <h4 class="text-primary mb-2">PURPLE</h4>
+      <img class="img-fluid" src="/img/purple.png" alt="purple">
+      <p class="my-2">PURPLE (PURpose Parametric Log gEnerator) is an extensible progressive web app written in Java. The PURPLE framework is meant to be parametric on the mining purpose, thus it can produce distinct event logs from the same model. Moreover, it supports the simulation of models in different languages, reconducting their execution on a common behavioral model, which is the labeled transition systems. Thus, one can choose a modeling language (e.g., BPMN, DCR, Petri nets, WF-nets) and a mining purpose (e.g., rediscoverability, what-if analysis, compliance checking, decision mining).
+      </p>
+      <a class="btn btn-outline-primary" target="_blank" href="http://pros.unicam.it/purple" >Find out more...</a>
+    </div>
+    <div class="block block-dark anim-2">
+      <h4 class="text-primary mb-2">S³</h4>
+      <img class="img-fluid" src="../img/s3logo.png" alt="S³">
+      <p class="my-2">S³ verifies the correctness of multi-layered BPMN collaboration diagrams in particular with respect to safeness and soundness. The tool is based on a client-server architecture composed by a client, developed in Html/Javascript and embedding the Camunda bpmn.io modeller, and a web-service, developed in Java using the RESTful technology.</p>
+      <a class="btn btn-outline-primary" target="_blank" href="http://pros.unicam.it/s3" >Find out more...</a>
+    </div>
+  </div>
+
+  <!-- col 2 -->
+  <div class="col-4">
+    <div class="block block-green anim-1">
+      <h4 class="text-primary mb-2">UBBA</h4>
+      <img class="img-fluid" src="/img/ubba.gif" alt="Ubba">
+      <p class="my-2">UBBA (Unity Based BPMN Animator) is a tool that, taken in input a BPMN file allows to create a virtual world with a 3D visualization of all the elements present inside the BPMN model. More in detail, UBBA aims at reproducing the setting of a BPMN collaboration diagram and animate its execution from the point of view of the resource, by means of token flow.</p>
+      <a class="btn btn-outline-primary" target="_blank" href="http://pros.unicam.it/ubba" >Find out more...</a>
+    </div>
+  </div>
+
+  <!-- col 3 -->
+  <div class="col-4">
+    <div class="block block-orange anim-4" >
+      <h4 class="text-primary mb-2">MIDA</h4>
+      <img class="img-fluid" src="/img/mida.gif" alt="Mida">
+      <p class="my-2">MIDA (Multiple Instances and Data Animator) is a BPMN animator based on the Camunda bpmn.io web modeler. The result is a complete tool for animating BPMN models in collaborative, multi-instance and data-based contexts. MIDA web application is written in JavaScript. It embeds BPMN models into personal browsers without using any server backend.</p>
+      <a class="btn btn-outline-primary" target="_blank" href="http://pros.unicam.it/mida" >Find out more...</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var slideUp = {
+      distance: '150%',
+      origin: 'bottom',
+      opacity: null
+  };
+
+  var slideDown = {
+      distance: '150%',
+      origin: 'top',
+      opacity: null
+  };
+
+  var slideLeft = {
+      distance: '150%',
+      origin: 'left',
+      opacity: null
+  };
+
+  var slideRight = {
+    duration: 3000,
+      distance: '150%',
+      origin: 'right',
+      opacity: null
+  };
+
+  ScrollReveal().reveal('.anim-1', slideUp);
+		ScrollReveal().reveal('.anim-2', slideDown);
+		ScrollReveal().reveal('.anim-3', slideLeft);
+		ScrollReveal().reveal('.anim-4', slideRight);
+	</script>
